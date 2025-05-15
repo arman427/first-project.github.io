@@ -1,0 +1,215 @@
+.welcome__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 1000px) {
+        flex-direction: column-reverse;
+        gap: 30px;
+    }
+}
+
+.welcome__text-wrapper {
+    max-width: 570px;
+
+    @media only screen and (max-width: 600px) {
+        width: auto;
+        max-width: 355px;
+    }
+}
+
+.welcome__tittle {
+    margin-bottom: 54px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 60px;
+        width: 200px;
+        height: 200px;
+    
+        border-radius: 100%;
+        background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 51.85%);
+        filter: blur(150px);
+        z-index: -1;
+    }
+
+    @media only screen and (max-width: 700px) {
+        max-width: 335px;
+        font-size: 48px;
+        margin-bottom: 36px;
+    }
+}
+
+.welcome__text {
+    max-width: 570px;
+    margin-bottom: 54px;
+
+    @media only screen and (max-width: 700px) {
+        max-width: 352px;
+        line-height: 163%;
+        letter-spacing: -0.02em;
+        color: #d9d9d9;
+        font-size: 12px;
+        margin-bottom: 36px;
+    }
+}
+
+.welcome__btns-wrapper {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+
+    @media only screen and (max-width: 700px) {
+        margin-bottom: 35px;
+        gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .welcome__btn-one {
+        font-size: 16px;
+        padding: 13px 50px;
+    }
+}
+
+.welcome__btn-two {
+    font-size: 24px;
+    letter-spacing: -0.03em;
+    border: 2px solid #2a9a53;
+    border-radius: 83px;
+    color: #2a9a53;
+    padding: 20px 54px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background-color: #2a9a53;
+        border: 2px solid transparent;
+        color: #fff;
+        font-weight: 639;
+    }
+
+    @media only screen and (max-width: 700px) {
+        font-size: 16px;
+        padding: 13px 33px;
+    }
+}
+
+.stats {
+    line-height: 144%;
+    margin-top: 54px;
+    display: flex;
+    column-gap: 46px;
+
+    @media only screen and (max-width: 600px) {
+        margin-top: 0;
+    }
+}
+
+.stats__item {
+    max-width: 126px;
+
+    @media only screen and (max-width: 800px) {
+        width: 80px;
+    }
+
+    span {
+        font-size: 62px;
+        line-height: 109%;
+        letter-spacing: -0.03em;
+        color: #fff;
+        position: relative;
+
+        @media only screen and (max-width: 700px) {
+                font-size: 41px;
+            }
+        
+
+        &::after {
+            content: "+";
+            position: absolute;    
+            background: linear-gradient(244deg, #237249 0%, #35c66b 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+.welcome__img-wrapper {
+    padding-right: 30px;
+    position: relative;
+
+    img {
+        width: 470px;
+        animation: welcomeMove 1s infinite alternate ease-in-out;
+
+        @media only screen and (max-width: 800px) {
+            width: 200px;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 70px;
+        bottom: 30px;
+        width: 300px;
+        height: 300px;
+    
+        border-radius: 100%;
+        background: linear-gradient(245deg, rgba(35, 114, 73, 0.55) 0%, rgba(53, 198, 107, 0.73) 51.85%);
+        filter: blur(80px);
+        z-index: -10;
+
+        @media only screen and (max-width: 1000px) {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @media only screen and (max-width: 800px) {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            filter: blur(80px);
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    &::before {
+        content: "";
+        
+        position: absolute;
+        right: -250px;
+        bottom: -170px;
+        width: 860px;
+        height: 620px;
+        
+        background-image: url('./../img/lines.svg');
+        background-repeat: no-repeat;
+        z-index: -5;    
+
+        @media only screen and (max-width: 800px) {
+            right: -333px;
+            bottom: -310px;
+            transform: rotate(10deg);
+        }
+
+    }
+
+    @media only screen and (max-width: 1140px) {
+        padding: 0;
+    }
+}
+
+@keyframes welcomeMove {
+    0% {
+        transform: none;
+    }
+    100% {
+        transform: translateY(-30px);
+    }
+}

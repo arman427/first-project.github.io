@@ -1,0 +1,112 @@
+footer {
+    background-color: $footer-bg;
+    padding: 40px 0;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    @media only screen and (max-width: 900px) {
+        flex-wrap: wrap;
+        align-items: center;
+        row-gap: 50px;
+    }
+}
+
+.footer__logo {
+    @media only screen and (max-width: 500px) {
+        font-size: 25px;
+    }
+}
+
+.footer__nav {
+    display: flex;
+    column-gap: 80px;
+    margin-bottom: 85px;
+
+    @media only screen and (max-width: 970px) {
+        gap: 40px;
+    }
+
+    @media only screen and (max-width: 900px) {
+        width: 100%;
+        order: 1;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+.footer__nav-column {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 20px);
+}
+
+.footer__nav-link {
+    color: rgba(187, 179, 179, 0.43);
+    transition: color 0.3s ease-in-out;
+
+    &:first-child {
+        color: #bbb3b3;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    &:hover {
+        color: #bbb3b3;
+    }
+}
+
+.footer__up-link {
+    width: 85px;
+    height: 85px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 30px;
+    border: 1.5px solid transparent;
+    background: linear-gradient($footer-bg, $footer-bg) padding-box,
+                linear-gradient(-30deg, #237249, #35c66b) border-box;
+    transition: transform 0.3s ease;
+
+    img {
+        height: 37px;
+    }
+    
+    @media only screen and (max-width: 800px) {
+        width: 50px;
+        height: 50px;
+        border-radius: 18px;
+    }
+    
+    @media only screen and (max-width: 800px) {
+        .arrow {
+            height: 27px;
+        }
+    }
+
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.footer__phone {
+    font-weight: 500;
+    font-size: 26px;
+    background: linear-gradient(245deg, #237249 0%, #35c66b 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media only screen and (max-width: 500px) {
+        font-size: 16px;
+    }
+}

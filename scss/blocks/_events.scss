@@ -1,0 +1,166 @@
+.events {
+    position: relative;
+    margin-bottom: 150px;
+
+    @media only screen and (max-width: 800px) {
+        margin-bottom: 100px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -131px;
+        top: -8px;
+        width: 680px;
+        height: 617px;
+        z-index: -10;
+        background-image: url(./../img/stats_lines.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: rotate(20deg);
+
+        @media only screen and (max-width: 950px) {
+            display: none;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 650px;
+        width: 200px;
+        height: 200px;
+        filter: blur(100px);
+        z-index: -5;
+        border-radius: 100%;
+        background: rgba(217, 217, 217, 0.4);
+    }
+}
+
+.events-wrapper {
+    display: grid;
+    gap: 25px;
+    grid-auto-rows: 260px;
+    grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+    grid-template-areas: "price price kitchen kitchen" "free social social choose";
+
+    @media only screen and (max-width: 1040px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "price price" "free social" "kitchen kitchen";
+    }
+
+    @media only screen and (max-width: 800px) {
+        grid-auto-rows: auto;
+        gap: 20px;
+    }
+}
+
+.events__item {
+    padding: 45px 30px 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    transition: transform 0.3s ease-in-out;
+
+    @media only screen and (max-width: 800px) {
+        padding: 20px 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
+.event__tittle {
+    font-weight: 500;   
+    font-size: 32px;
+    line-height: 109%;
+    color: #fff;
+    margin-bottom: 49px;
+    max-width: 294px;
+
+    @media only screen and (max-width: 800px) {
+        font-size: 18px;
+        margin-bottom: 25px;
+        max-width: 160px;
+    }
+}
+
+.event__btn {
+    line-height: 146%;
+    letter-spacing: -0.03em;
+    padding: 20px 52px;
+
+    @media only screen and (max-width: 800px) {
+        padding: 11px 32px;
+        font-size: 14px;
+    }
+} 
+
+.event--price {
+    background-image: url('./../img/price.png');
+    grid-area: price;
+}
+
+.event--kitchen {
+    background-image: url('./../img/kitchen.png');
+    grid-area: kitchen;
+}
+
+.event--free {
+    background-image: url('./../img/free.png');
+    grid-area: free;
+}
+
+.event--social {
+    background-image: url('./../img/social.png');
+    grid-area: social;
+}
+
+.event--choose {
+    background-image: url('./../img/choose.png');
+    grid-area: choose;
+
+    @media only screen and (max-width: 1125px) {
+        display: none;
+    }
+}
+
+.events__text {
+    width: 457px;
+
+    @media only screen and (max-width: 800px) {
+        width: auto;
+        max-width: 300px;
+    }
+}
+
+.text-reverse {
+    flex-direction: row-reverse;
+    margin-bottom: 54px;
+
+    @media only screen and (max-width: 800px) {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .text__row-tittle::after {
+        @media only screen and (max-width: 800px) {
+            right: 115px;
+            top: 169px;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        margin-bottom: 35px;
+    }
+}
+
